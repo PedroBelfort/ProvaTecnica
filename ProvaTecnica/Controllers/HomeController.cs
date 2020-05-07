@@ -18,16 +18,13 @@ namespace ProvaTecnica.Controllers
             _logger = logger;
         }
 
+        // Método para a apresentação de View Home 
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
+        // Método para a apresentação da página de erro 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

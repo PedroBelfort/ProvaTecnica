@@ -20,6 +20,7 @@ namespace ProvaTecnica.Controllers
         }
 
         // GET: Usuarios
+        // Método para a apresentação da lista de Usuários criados
         public async Task<IActionResult> Index()
         {
             var contexto = _context.Usuarios.Include(u => u.Perfil);
@@ -27,6 +28,7 @@ namespace ProvaTecnica.Controllers
         }
 
         // GET: Usuarios/Details/5
+        // Método para exibir os detalhes de um determinado Usuário
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -46,6 +48,7 @@ namespace ProvaTecnica.Controllers
         }
 
         // GET: Usuarios/Create
+        // Método para a exibição dos campos para o cadastro de um Usuário
         public IActionResult Create()
         {
             ViewData["PerfilId"] = new SelectList(_context.Perfis, "Id", "Nome");
@@ -53,8 +56,7 @@ namespace ProvaTecnica.Controllers
         }
 
         // POST: Usuarios/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // Método para a submissão do cadastro de um determinado Usuário
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Nome,Senha,Email,PerfilId")] Usuario usuario)
@@ -70,6 +72,7 @@ namespace ProvaTecnica.Controllers
         }
 
         // GET: Usuarios/Edit/5
+        // Método para acionar a edição de um determinado Usuário
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -87,8 +90,7 @@ namespace ProvaTecnica.Controllers
         }
 
         // POST: Usuarios/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // Método para submeter a edição de um determinado Usuário 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Senha,Email,PerfilId")] Usuario usuario)
@@ -123,6 +125,7 @@ namespace ProvaTecnica.Controllers
         }
 
         // GET: Usuarios/Delete/5
+        // Método para acionar a exclusão de um determinado Usuário
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -142,6 +145,7 @@ namespace ProvaTecnica.Controllers
         }
 
         // POST: Usuarios/Delete/5
+        // Método para a submissão da exclusão de um determinado Usuário
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -152,6 +156,7 @@ namespace ProvaTecnica.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        //Método interno para verificação da existência de um determinado Usuário
         private bool UsuarioExists(int id)
         {
             return _context.Usuarios.Any(e => e.Id == id);

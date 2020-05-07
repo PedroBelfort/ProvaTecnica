@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\NBK-0003\\source\\repos\\ProvaTecnica\\ProvaTecnica\\ProvaTecnica.csproj": {}
+    "C:\\Users\\NBK-0003\\Documents\\ProvaTecnica\\ProvaTecnica\\ProvaTecnica.csproj": {}
   },
   "projects": {
-    "C:\\Users\\NBK-0003\\source\\repos\\ProvaTecnica\\ProvaTecnica\\ProvaTecnica.csproj": {
+    "C:\\Users\\NBK-0003\\Documents\\ProvaTecnica\\ProvaTecnica\\ProvaTecnica.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\NBK-0003\\source\\repos\\ProvaTecnica\\ProvaTecnica\\ProvaTecnica.csproj",
+        "projectUniqueName": "C:\\Users\\NBK-0003\\Documents\\ProvaTecnica\\ProvaTecnica\\ProvaTecnica.csproj",
         "projectName": "ProvaTecnica",
-        "projectPath": "C:\\Users\\NBK-0003\\source\\repos\\ProvaTecnica\\ProvaTecnica\\ProvaTecnica.csproj",
+        "projectPath": "C:\\Users\\NBK-0003\\Documents\\ProvaTecnica\\ProvaTecnica\\ProvaTecnica.csproj",
         "packagesPath": "C:\\Users\\NBK-0003\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\NBK-0003\\source\\repos\\ProvaTecnica\\ProvaTecnica\\obj\\",
+        "outputPath": "C:\\Users\\NBK-0003\\Documents\\ProvaTecnica\\ProvaTecnica\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -19,13 +19,16 @@ namespace ProvaTecnica.Controllers
             _context = context;
         }
 
+
         // GET: Funcionalidades
+        //Médoto para listar as funcionalidades cadastradas
         public async Task<IActionResult> Index()
         {
             return View(await _context.Funcionalidades.ToListAsync());
         }
 
-        // GET: Funcionalidades/Details/5
+        // GET: Funcionalidades/Details/5 
+        //Método para apresentar os atributos de uma determinada funcionalidade
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -43,15 +46,15 @@ namespace ProvaTecnica.Controllers
             return View(funcionalidade);
         }
 
-        // GET: Funcionalidades/Create
+        // GET: Funcionalidades/Create  
+        // Método para apresentação do formulário de criação de uma funcionalidade
         public IActionResult Create()
         {
             return View();
         }
 
         // POST: Funcionalidades/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // Método para a submissão do formulários com os dados de funcionalidade
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Nome")] Funcionalidade funcionalidade)
@@ -66,6 +69,7 @@ namespace ProvaTecnica.Controllers
         }
 
         // GET: Funcionalidades/Edit/5
+        // Método para acionar a  edição de uma determinada funcionalidade
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -82,8 +86,7 @@ namespace ProvaTecnica.Controllers
         }
 
         // POST: Funcionalidades/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // Método para submeter o formulário da edição de uma funcionalidade
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Nome")] Funcionalidade funcionalidade)
@@ -117,6 +120,7 @@ namespace ProvaTecnica.Controllers
         }
 
         // GET: Funcionalidades/Delete/5
+        // Método para acionar a exclusão de uma funcionalidade
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -135,6 +139,7 @@ namespace ProvaTecnica.Controllers
         }
 
         // POST: Funcionalidades/Delete/5
+        // Método para submeter a exclusão de uma determinada funcionalidade
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

@@ -20,6 +20,7 @@ namespace ProvaTecnica.Controllers
         }
 
         // GET: PerfilFuncionalidades
+        // Método para a apresentação da lista de PerfilFuncionalidades criadas
         public async Task<IActionResult> Index()
         {
             var contexto = _context.PerfilFuncionalidade.Include(p => p.Funcionalidade).Include(p => p.Perfil);
@@ -27,6 +28,7 @@ namespace ProvaTecnica.Controllers
         }
 
         // GET: PerfilFuncionalidades/Details/5
+        // Método para exibir os detalhes de um determinado PerfilFuncionalidade
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -47,6 +49,7 @@ namespace ProvaTecnica.Controllers
         }
 
         // GET: PerfilFuncionalidades/Create
+        // Método para a exibição dos campos para o cadastro de um PerfilFuncionalidade
         public IActionResult Create()
         {
             ViewData["FuncionalidadeId"] = new SelectList(_context.Funcionalidades, "Id", "Nome");
@@ -55,8 +58,7 @@ namespace ProvaTecnica.Controllers
         }
 
         // POST: PerfilFuncionalidades/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // Método para a submissão do cadastro de um determinado PerfilFuncionalidade
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,PerfilId,FuncionalidadeId")] PerfilFuncionalidade perfilFuncionalidade)
@@ -73,6 +75,7 @@ namespace ProvaTecnica.Controllers
         }
 
         // GET: PerfilFuncionalidades/Edit/5
+        // Método para acionar a edição de um determinado PerfilFuncionalidade
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -91,8 +94,7 @@ namespace ProvaTecnica.Controllers
         }
 
         // POST: PerfilFuncionalidades/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // Método para submeter a edição de um determinado PerfilFuncionalidade 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,PerfilId,FuncionalidadeId")] PerfilFuncionalidade perfilFuncionalidade)
@@ -128,6 +130,7 @@ namespace ProvaTecnica.Controllers
         }
 
         // GET: PerfilFuncionalidades/Delete/5
+        // Método para aclioar a exclusão de um determinado PerfilFuncionalidade
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -148,6 +151,7 @@ namespace ProvaTecnica.Controllers
         }
 
         // POST: PerfilFuncionalidades/Delete/5
+        // Método para a submissão da exclusão de um determinado PerfilFuncionalidade
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -158,6 +162,7 @@ namespace ProvaTecnica.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        //Método interno para verificação da existencia de um determinado PerfilFuncionalidade
         private bool PerfilFuncionalidadeExists(int id)
         {
             return _context.PerfilFuncionalidade.Any(e => e.Id == id);
