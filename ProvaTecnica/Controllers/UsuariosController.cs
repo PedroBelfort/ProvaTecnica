@@ -20,7 +20,7 @@ namespace ProvaTecnica.Controllers
         }
 
         // GET: Usuarios
-        // Método para a apresentação da lista de Usuários criados
+        // Método para a apresentação da lista de Usuários  criados
         public async Task<IActionResult> Index()
         {
             var contexto = _context.Usuarios.Include(u => u.Perfil);

@@ -12,7 +12,7 @@ namespace ProvaTecnica.Models
         [Key]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Campo Obrigatório.")]
+        [Required(ErrorMessage = "Campo Obrigatório. ")]
         public int PerfilId { get; set; }
 
         public Perfil Perfil { get; set; }

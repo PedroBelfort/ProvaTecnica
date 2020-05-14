@@ -21,7 +21,7 @@ namespace ProvaTecnica.Controllers
 
 
         // GET: Funcionalidades
-        //Médoto para listar as funcionalidades cadastradas
+        //Médoto para listar as funcionalidades  cadastradas
         public async Task<IActionResult> Index()
         {
             return View(await _context.Funcionalidades.ToListAsync());

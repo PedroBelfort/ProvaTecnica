@@ -20,7 +20,7 @@ namespace ProvaTecnica.Controllers
         }
 
         // GET: PerfilFuncionalidades
-        // Método para a apresentação da lista de PerfilFuncionalidades criadas
+        // Método para a apresentação da lista de PerfilFuncionalidades  criadas
         public async Task<IActionResult> Index()
         {
             var contexto = _context.PerfilFuncionalidade.Include(p => p.Funcionalidade).Include(p => p.Perfil);
